@@ -7,7 +7,9 @@ public class MenuItemCurator {
 
     private String removeZusaetze(String description) {
         description = removeAllParenthesisWithContent(description);
-        description = trimMultipleWhitespaces(description);
+        description = removeMultipleWhitespaces(description);
+        description = removeSpacesBeforeCommas(description);
+        description = ensureSpacesAfterPunctuation(description);
         return description;
     }
 
@@ -15,7 +17,15 @@ public class MenuItemCurator {
         return string.replaceAll("\\(.*?\\)", "");
     }
 
-    private String trimMultipleWhitespaces(String string) {
+    private String removeMultipleWhitespaces(String string) {
         return string.replaceAll("\\s+", " ");
+    }
+
+    private String removeSpacesBeforeCommas(String string) {
+        return string.replaceAll("\\s+,", ",");
+    }
+
+    private String ensureSpacesAfterPunctuation(String string) {
+        return string.replaceAll("([,.!?;:])([a-zA-Z])", "$1 $2");
     }
 }
