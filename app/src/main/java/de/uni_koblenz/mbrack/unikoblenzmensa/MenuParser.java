@@ -17,6 +17,8 @@ import java.util.List;
 public class MenuParser {
     private static final String namespace = null;
 
+    private MenuItemCurator menuItemCurator = new MenuItemCurator();
+
     public List<Menu> parse(InputStream xmlIn) throws XmlPullParserException, IOException {
         try {
             XmlPullParser parser = Xml.newPullParser();
@@ -86,6 +88,7 @@ public class MenuParser {
         parser.require(XmlPullParser.START_TAG, namespace, tagName);
         String description = readText(parser);
         parser.require(XmlPullParser.END_TAG, namespace, tagName);
+        description = menuItemCurator.curateDescription(description);
         return description;
     }
 
