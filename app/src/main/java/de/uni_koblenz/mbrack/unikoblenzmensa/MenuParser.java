@@ -55,11 +55,7 @@ public class MenuParser {
 
         parser.require(XmlPullParser.START_TAG, namespace, "Datum");
 
-        System.out.println("Date: " + readTextWithoutNext(parser));
-
         while (parser.next() != XmlPullParser.END_TAG) {
-            System.out.println(parser.getEventType() + " / " + parser.getName());
-
             if (parser.getEventType() != XmlPullParser.START_TAG) {
                 continue;
             }
@@ -84,7 +80,6 @@ public class MenuParser {
     }
 
     private String readMenuItemDescription(XmlPullParser parser, String tagName) throws IOException, XmlPullParserException {
-        System.out.println("Reading " + tagName);
         parser.require(XmlPullParser.START_TAG, namespace, tagName);
         String description = readText(parser);
         parser.require(XmlPullParser.END_TAG, namespace, tagName);

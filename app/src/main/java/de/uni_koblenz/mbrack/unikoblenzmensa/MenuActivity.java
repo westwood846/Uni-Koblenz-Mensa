@@ -10,6 +10,7 @@ import java.util.ArrayList;
 public class MenuActivity extends AppCompatActivity {
     private ListView listView;
     private RecyclerView.LayoutManager layoutManager;
+
     private MenuItemAdapter menuItemAdapter;
 
     @Override

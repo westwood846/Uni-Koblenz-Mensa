@@ -1,8 +1,6 @@
 package de.uni_koblenz.mbrack.unikoblenzmensa;
 
 import android.os.AsyncTask;
-import android.support.v7.widget.RecyclerView;
-import android.webkit.URLUtil;
 
 import org.xmlpull.v1.XmlPullParserException;
 
