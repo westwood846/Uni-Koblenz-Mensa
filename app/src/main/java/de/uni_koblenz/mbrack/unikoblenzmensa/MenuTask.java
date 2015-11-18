@@ -38,20 +38,6 @@ public class MenuTask extends AsyncTask<Void, Void, List<Menu>> {
         }
 
         return menus;
-
-//        Menu[] menus = new Menu[]{
-//                new Menu(new MenuItem[]{
-//                        new MenuItem("Menü 1", "Hackbraten"),
-//                        new MenuItem("Menü 3", "Reis"),
-//                        new MenuItem("Extratheke", "Nudeln")
-//                }),
-//                new Menu(new MenuItem[]{
-//                        new MenuItem("Menü 1", "Fisch"),
-//                        new MenuItem("Menü 3", "Gebratenes"),
-//                        new MenuItem("Extratheke", "Gekochtes")
-//                }),
-//        };
-//        return menus;
     }
 
     @Override
