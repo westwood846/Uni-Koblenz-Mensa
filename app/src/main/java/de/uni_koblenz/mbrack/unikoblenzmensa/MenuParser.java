@@ -10,6 +10,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+
 /*
     See https://developer.android.com/training/basics/network-ops/xml.html
  */
@@ -61,12 +62,12 @@ public class MenuParser {
             }
 
             switch (parser.getName()) {
-                case "menu1": readMenuItems.add(new MenuItem("Menü 1", readMenuItemDescription(parser, "menu1"))); break;
-                case "menuv": readMenuItems.add(new MenuItem("Vegetarisch", readMenuItemDescription(parser, "menuv"))); break;
-                case "menue": readMenuItems.add(new MenuItem("Extratheke", readMenuItemDescription(parser, "menue"))); break;
-                case "menua": readMenuItems.add(new MenuItem("Abendmensa", readMenuItemDescription(parser, "menua"))); break;
-                case "menub": readMenuItems.add(new MenuItem("Bistro", readMenuItemDescription(parser, "menub"))); break;
-                case "menuvegan": readMenuItems.add(new MenuItem("Vegan", readMenuItemDescription(parser, "menuvegan"))); break;
+                case "menu1": readMenuItems.add(new MenuItem("Menü 1", readMenuItemDescription(parser, "menu1"), MenuItemType.MENU1)); break;
+                case "menuv": readMenuItems.add(new MenuItem("Vegetarisch", readMenuItemDescription(parser, "menuv"), MenuItemType.VEGETARIAN)); break;
+                case "menue": readMenuItems.add(new MenuItem("Extratheke", readMenuItemDescription(parser, "menue"), MenuItemType.EXTRA)); break;
+                case "menua": readMenuItems.add(new MenuItem("Abendmensa", readMenuItemDescription(parser, "menua"), MenuItemType.ABEND)); break;
+                case "menub": readMenuItems.add(new MenuItem("Bistro", readMenuItemDescription(parser, "menub"), MenuItemType.BISTRO)); break;
+                case "menuvegan": readMenuItems.add(new MenuItem("Vegan", readMenuItemDescription(parser, "menuvegan"), MenuItemType.VEGAN)); break;
                 default: skip(parser);
             }
         }

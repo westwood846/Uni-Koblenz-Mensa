@@ -1,19 +1,22 @@
 package de.uni_koblenz.mbrack.unikoblenzmensa;
 
 public class MenuItem {
-    public String type;
+    public String title;
     public String description;
+    public MenuItemType type;
 
-    public MenuItem(String type, String description) {
-        this.type = type;
+    public MenuItem(String title, String description, MenuItemType type) {
+        this.title = title;
         this.description = description;
+        this.type = type;
     }
 
     @Override
     public String toString() {
         return "MenuItem{" +
-                "type='" + type + '\'' +
+                "title='" + title + '\'' +
                 ", description='" + description + '\'' +
+                ", type=" + type +
                 '}';
     }
 }
