@@ -7,8 +7,8 @@ import android.support.v7.widget.RecyclerView;
 
 public class MenuActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
-    private RecyclerView.Adapter menuAdapter;
     private RecyclerView.LayoutManager layoutManager;
+    private MenuAdapter menuAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,10 +17,16 @@ public class MenuActivity extends AppCompatActivity {
 
         recyclerView = (RecyclerView) findViewById(R.id.activity_menu_recycler_view);
 
-        menuAdapter = new MenuAdapter();
-        recyclerView.setAdapter(menuAdapter);
-
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
+
+        menuAdapter = new MenuAdapter();
+        recyclerView.setAdapter(menuAdapter);
+        updateMenus();
+    }
+
+    private void updateMenus() {
+        MenuTask menuTask = new MenuTask(menuAdapter);
+        menuTask.execute();
     }
 }

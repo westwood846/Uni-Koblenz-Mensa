@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 public class MenuAdapter extends RecyclerView.Adapter {
-    private String[] items = new String[]{"Alle", "Meine", "Entchen"};
+    public Menu[] menus;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public CardView cardView;
@@ -29,11 +29,15 @@ public class MenuAdapter extends RecyclerView.Adapter {
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         CardView cardToAdapt = ((ViewHolder) holder).cardView;
         TextView textToReplace = (TextView) cardToAdapt.findViewById(R.id.menu_item_card_view_text);
-        textToReplace.setText(items[position]);
+        textToReplace.setText(menus[0].menuItems[position].description);
     }
 
     @Override
     public int getItemCount() {
-        return items.length;
+        if (menus == null) {
+            return 0;
+        } else {
+            return menus[0].menuItems.length;
+        }
     }
 }
