@@ -1,5 +1,6 @@
 package de.uni_koblenz.mbrack.unikoblenzmensa;
 
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,23 +11,25 @@ public class MenuAdapter extends RecyclerView.Adapter {
     private String[] items = new String[]{"Alle", "Meine", "Entchen"};
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView textView;
-        public ViewHolder(TextView v) {
+        public CardView cardView;
+        public ViewHolder(CardView v) {
             super(v);
-            textView = v;
+            cardView = v;
         }
     }
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        TextView newView = ((TextView) LayoutInflater.from(parent.getContext()).inflate(R.layout.menu_item_text_view, parent, false));
+        CardView newView = ((CardView) LayoutInflater.from(parent.getContext()).inflate(R.layout.menu_item_card_view, parent, false));
         ViewHolder newViewHolder = new ViewHolder(newView);
         return newViewHolder;
     }
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        ((ViewHolder) holder).textView.setText(items[position]);
+        CardView cardToAdapt = ((ViewHolder) holder).cardView;
+        TextView textToReplace = (TextView) cardToAdapt.findViewById(R.id.menu_item_card_view_text);
+        textToReplace.setText(items[position]);
     }
 
     @Override
