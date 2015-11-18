@@ -5,7 +5,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.view.ViewParent;
+import android.view.*;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -102,6 +102,13 @@ public class MenusActivity extends AppCompatActivity {
         allMenuItemAdapters.add(wednesdayMenuItemAdapter);
         allMenuItemAdapters.add(thursdayMenuItemAdapter);
         allMenuItemAdapters.add(fridayMenuItemAdapter);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(android.view.Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return true;
     }
 
     private void updateMenus() {
