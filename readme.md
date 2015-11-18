@@ -25,3 +25,8 @@ Folgende Features könnten unter Anderem noch umgesetzt werden. Bevor eines davo
 * Automatisches Abfragen und Zwischenspeichern der Daten durch einen eigenen Server um den Server des Studierendenwerks nicht zu belasten
 * Binäres Ratingsystem: Nutzer können auswählen, welches Gericht sie essen *werden*. Darauf aufbauend vielleicht ein paar kleine Statistiken und Erinnerungen dass ein Gericht schon mal gegessen wurde.
 * Anzeige der Speisepläne für kommende Wochen, nicht nur die aktuelle
+
+## Licenses
+Obwohl dieses Projekt als Open Source gedacht ist verlangen manche Frameworks oder so dann man ihre Lizens oder wenigstens einen Link zu ihrer Website kenntlich macht. Bis wir dafür einen Screen in der App eingerichtet haben soll diesen Pflichten an dieser Stelle nachgekommen werden:
+
+* MenuItem-Icons von [Icons8](https://icons8.com/)
