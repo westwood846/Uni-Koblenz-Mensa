@@ -39,8 +39,6 @@ public class MenusActivity extends AppCompatActivity {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
         setupAdapters();
 
         viewPager = (ViewPager) findViewById(R.id.viewpager);
