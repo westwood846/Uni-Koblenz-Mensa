@@ -5,6 +5,11 @@ import android.os.AsyncTask;
 public class MenuTask extends AsyncTask<Void, Void, Menu[]> {
 
     @Override
+    protected void onPreExecute() {
+        addProgressBar();
+    }
+
+    @Override
     protected Menu[] doInBackground(Void... params) {
         Menu[] menus = new Menu[]{
                 new Menu(new MenuItem[]{
@@ -19,5 +24,16 @@ public class MenuTask extends AsyncTask<Void, Void, Menu[]> {
                 }),
         };
         return menus;
+    }
+
+    @Override
+    protected void onPostExecute(Menu[] menus) {
+        removeProgressBar();
+    }
+
+    private void addProgressBar() {
+    }
+
+    private void removeProgressBar() {
     }
 }
