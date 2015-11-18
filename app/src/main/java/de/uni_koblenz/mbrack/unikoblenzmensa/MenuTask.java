@@ -12,10 +12,10 @@ public class MenuTask extends AsyncTask<Void, Void, List<Menu>> {
 
     public static final String API_URL = "http://www.studierendenwerk-koblenz.de/api/speiseplan/speiseplan.xml";
 
-    private MenuItemAdapter menuItemAdapter;
+    private List<MenuItemAdapter> menuItemAdapters;
 
-    public MenuTask(MenuItemAdapter menuAdapter) {
-        this.menuItemAdapter = menuAdapter;
+    public MenuTask(List<MenuItemAdapter> menuItemAdapters) {
+        this.menuItemAdapters = menuItemAdapters;
     }
 
     @Override
@@ -40,6 +40,7 @@ public class MenuTask extends AsyncTask<Void, Void, List<Menu>> {
 
     @Override
     protected void onPostExecute(List<Menu> menus) {
+        sanityCheck(menus);
         updateAdapter(menus);
         removeProgressBar();
     }
@@ -47,10 +48,17 @@ public class MenuTask extends AsyncTask<Void, Void, List<Menu>> {
     private void addProgressBar() {
     }
 
+    private void sanityCheck(List<Menu> menus) {
+    }
+
     private void updateAdapter(List<Menu> menus) {
-        menuItemAdapter.menuItems.clear();
-        menuItemAdapter.addAll(menus.get(0).menuItems); // todo: Use one adapter for each date and update them all
-        menuItemAdapter.notifyDataSetChanged();
+        for (int i = 0; i < menus.size(); i++) {
+            Menu menu = menus.get(i);
+            MenuItemAdapter menuItemAdapter = menuItemAdapters.get(i);
+            menuItemAdapter.menuItems.clear();
+            menuItemAdapter.addAll(menu.menuItems);
+            menuItemAdapter.notifyDataSetChanged();
+        }
     }
 
     private void removeProgressBar() {
