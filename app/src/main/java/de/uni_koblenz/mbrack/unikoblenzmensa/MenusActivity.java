@@ -12,6 +12,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MenusActivity extends AppCompatActivity {
+    public static final int MONDAY = 0;
+    public static final int TUESDAY = 1;
+    public static final int WEDNESDAY = 2;
+    public static final int THURSDAY = 3;
+    public static final int FRIDAY = 4;
+
     private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
@@ -47,11 +53,36 @@ public class MenusActivity extends AppCompatActivity {
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
 
-        viewPagerAdapter.addFragment(new MenuFragment(), "Monday");
-        viewPagerAdapter.addFragment(new MenuFragment(), "Tuesday");
-        viewPagerAdapter.addFragment(new MenuFragment(), "Wednesday");
-        viewPagerAdapter.addFragment(new MenuFragment(), "Thursday");
-        viewPagerAdapter.addFragment(new MenuFragment(), "Friday");
+        Bundle mondayBundle = new Bundle();
+        Bundle tuesdayBundle = new Bundle();
+        Bundle wednesdayBundle = new Bundle();
+        Bundle thursdayBundle = new Bundle();
+        Bundle fridayBundle = new Bundle();
+
+        mondayBundle.putInt("day", MONDAY);
+        tuesdayBundle.putInt("day", TUESDAY);
+        wednesdayBundle.putInt("day", WEDNESDAY);
+        thursdayBundle.putInt("day", THURSDAY);
+        fridayBundle.putInt("day", FRIDAY);
+
+        MenuFragment mondayFragment = new MenuFragment();
+        MenuFragment tuesdayFragment = new MenuFragment();
+        MenuFragment wednesdayFragment = new MenuFragment();
+        MenuFragment thursdayFragment = new MenuFragment();
+        MenuFragment fridayFragment = new MenuFragment();
+
+        mondayFragment.setArguments(mondayBundle);
+        tuesdayFragment.setArguments(tuesdayBundle);
+        wednesdayFragment.setArguments(wednesdayBundle);
+        thursdayFragment.setArguments(thursdayBundle);
+        fridayFragment.setArguments(fridayBundle);
+
+
+        viewPagerAdapter.addFragment(mondayFragment, "Monday");
+        viewPagerAdapter.addFragment(tuesdayFragment, "Tuesday");
+        viewPagerAdapter.addFragment(wednesdayFragment, "Wednesday");
+        viewPagerAdapter.addFragment(thursdayFragment, "Thursday");
+        viewPagerAdapter.addFragment(fridayFragment, "Friday");
 
         viewPager.setAdapter(viewPagerAdapter);
     }

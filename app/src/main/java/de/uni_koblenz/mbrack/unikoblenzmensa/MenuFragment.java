@@ -11,6 +11,7 @@ import android.widget.ListView;
 public class MenuFragment extends Fragment {
     private ListView listView;
     private MenuItemAdapter menuItemAdapter;
+    private int day;
 
     public MenuFragment() {
     }
@@ -25,7 +26,6 @@ public class MenuFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_menu, container, false);
         listView = (ListView) view.findViewById(R.id.menu_item_list);
-        System.out.println(listView);
         listView.setAdapter(menuItemAdapter);
         return view;
     }
@@ -33,7 +33,8 @@ public class MenuFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
+        day = getArguments().getInt("day");
         MenusActivity parentActivity = ((MenusActivity) context);
-        menuItemAdapter = parentActivity.allMenuItemAdapters.get(0);
+        menuItemAdapter = parentActivity.allMenuItemAdapters.get(day);
     }
 }
