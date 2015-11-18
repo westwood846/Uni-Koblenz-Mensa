@@ -12,7 +12,7 @@ Unit-Tests wären sicherlich hilfreich :D Ich entwickle die App mit [Genymotion]
 ## Contributing
 Clone/Fork das Projekt, mach deine Änderungen und erstelle einen Merge-Request. Ich würde mich sehr über Beteiligung freuen, sofern diese konstruktiv ist. Es ist mir wichtig dass der Code eine gewisse Qualität hat, damit es für Andere leicht ist, in das Projekt einzusteigen.
 
-Für Vorschläge oder Bug-Reports bitte das Issue-System von GitLab benutzen.
+Für Vorschläge oder Bug-Reports bitte das Issue-System von GitHub benutzen.
 
 ## Glossar
 Ein **Speiseplan** (Menu) ist eine Menge von **Gerichten** (MenuItem) für einen einzelnen Tag. Die App verwaltet also für jeden Tag einen Speiseplan.
