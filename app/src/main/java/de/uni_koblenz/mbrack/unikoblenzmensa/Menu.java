@@ -1,5 +1,6 @@
 package de.uni_koblenz.mbrack.unikoblenzmensa;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class Menu {
@@ -7,5 +8,12 @@ public class Menu {
 
     public Menu(List<MenuItem> menuItems) {
         this.menuItems = menuItems;
+    }
+
+    @Override
+    public String toString() {
+        return "Menu{" +
+                "menuItems=" + Arrays.toString(menuItems.toArray()) +
+                '}';
     }
 }

@@ -2,31 +2,30 @@ package de.uni_koblenz.mbrack.unikoblenzmensa;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.ListView;
+
+import java.util.ArrayList;
 
 public class MenuActivity extends AppCompatActivity {
-    private RecyclerView recyclerView;
+    private ListView listView;
     private RecyclerView.LayoutManager layoutManager;
-    private MenuAdapter menuAdapter;
+    private MenuItemAdapter menuItemAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
-        recyclerView = (RecyclerView) findViewById(R.id.activity_menu_recycler_view);
+        listView = (ListView) findViewById(R.id.menu_item_list);
 
-        layoutManager = new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(layoutManager);
-
-        menuAdapter = new MenuAdapter();
-        recyclerView.setAdapter(menuAdapter);
+        menuItemAdapter = new MenuItemAdapter(this, -1, new ArrayList<MenuItem>());
+        listView.setAdapter(menuItemAdapter);
         updateMenus();
     }
 
     private void updateMenus() {
-        MenuTask menuTask = new MenuTask(menuAdapter);
+        MenuTask menuTask = new MenuTask(menuItemAdapter);
         menuTask.execute();
     }
 }
