@@ -78,11 +78,11 @@ public class MenusActivity extends AppCompatActivity {
         fridayFragment.setArguments(fridayBundle);
 
 
-        viewPagerAdapter.addFragment(mondayFragment, "Monday");
-        viewPagerAdapter.addFragment(tuesdayFragment, "Tuesday");
-        viewPagerAdapter.addFragment(wednesdayFragment, "Wednesday");
-        viewPagerAdapter.addFragment(thursdayFragment, "Thursday");
-        viewPagerAdapter.addFragment(fridayFragment, "Friday");
+        viewPagerAdapter.addFragment(mondayFragment, "mon");
+        viewPagerAdapter.addFragment(tuesdayFragment, "tue");
+        viewPagerAdapter.addFragment(wednesdayFragment, "wed");
+        viewPagerAdapter.addFragment(thursdayFragment, "thu");
+        viewPagerAdapter.addFragment(fridayFragment, "fri");
 
         viewPager.setAdapter(viewPagerAdapter);
 
