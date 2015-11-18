@@ -71,11 +71,6 @@ public class MenuParser {
             }
         }
 
-        System.out.println("Read MenuItems:");
-        for (MenuItem readMenuItem : readMenuItems) {
-            System.out.println(readMenuItem.toString());
-        }
-
         return new Menu(readMenuItems);
     }
 

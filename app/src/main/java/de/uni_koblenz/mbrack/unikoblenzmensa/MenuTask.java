@@ -52,7 +52,7 @@ public class MenuTask extends AsyncTask<Void, Void, List<Menu>> {
     }
 
     private void updateAdapter(List<Menu> menus) {
-        for (int i = 0; i < menus.size(); i++) {
+        for (int i = 0; i < Math.min(menus.size(), menuItemAdapters.size()); i++) {
             Menu menu = menus.get(i);
             MenuItemAdapter menuItemAdapter = menuItemAdapters.get(i);
             menuItemAdapter.menuItems.clear();
