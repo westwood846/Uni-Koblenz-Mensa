@@ -111,7 +111,20 @@ public class MenusActivity extends AppCompatActivity {
         return true;
     }
 
+    @Override
+    public boolean onOptionsItemSelected(android.view.MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.refresh:
+                updateMenus();
+                updateTabSelection();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
     private void updateMenus() {
+        System.out.println("Getting menus");
         MenuTask menuTask = new MenuTask(allMenuItemAdapters);
         menuTask.execute();
     }
