@@ -9,6 +9,8 @@ import android.view.ViewParent;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 public class MenusActivity extends AppCompatActivity {
@@ -85,6 +87,8 @@ public class MenusActivity extends AppCompatActivity {
         viewPagerAdapter.addFragment(fridayFragment, "Friday");
 
         viewPager.setAdapter(viewPagerAdapter);
+
+        updateTabSelection();
     }
 
     private void setupAdapters() {
@@ -105,5 +109,24 @@ public class MenusActivity extends AppCompatActivity {
     private void updateMenus() {
         MenuTask menuTask = new MenuTask(allMenuItemAdapters);
         menuTask.execute();
+    }
+
+    private void updateTabSelection() {
+        viewPager.setCurrentItem(getCurrentDay());
+    }
+
+    private int getCurrentDay() {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(new Date());
+        int dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);
+
+        int fragmentIndex;
+        if (dayOfWeek != Calendar.SATURDAY && dayOfWeek != Calendar.SUNDAY) {
+            fragmentIndex = dayOfWeek - 2;
+        } else {
+            fragmentIndex = FRIDAY;
+        }
+
+        return fragmentIndex;
     }
 }
