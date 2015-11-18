@@ -8,4 +8,12 @@ public class MenuItem {
         this.type = type;
         this.description = description;
     }
+
+    @Override
+    public String toString() {
+        return "MenuItem{" +
+                "type='" + type + '\'' +
+                ", description='" + description + '\'' +
+                '}';
+    }
 }

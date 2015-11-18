@@ -3,12 +3,13 @@ package de.uni_koblenz.mbrack.unikoblenzmensa;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.List;
+
 public class MenuAdapter extends RecyclerView.Adapter {
-    public Menu[] menus;
+    public List<Menu> menus;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public CardView cardView;
@@ -29,7 +30,7 @@ public class MenuAdapter extends RecyclerView.Adapter {
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         CardView cardToAdapt = ((ViewHolder) holder).cardView;
         TextView textToReplace = (TextView) cardToAdapt.findViewById(R.id.menu_item_card_view_text);
-        textToReplace.setText(menus[0].menuItems[position].description);
+        textToReplace.setText(menus.get(0).menuItems.get(position).description);
     }
 
     @Override
@@ -37,7 +38,7 @@ public class MenuAdapter extends RecyclerView.Adapter {
         if (menus == null) {
             return 0;
         } else {
-            return menus[0].menuItems.length;
+            return menus.get(0).menuItems.size();
         }
     }
 }

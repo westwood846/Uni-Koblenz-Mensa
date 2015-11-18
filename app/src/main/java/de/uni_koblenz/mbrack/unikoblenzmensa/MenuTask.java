@@ -2,8 +2,17 @@ package de.uni_koblenz.mbrack.unikoblenzmensa;
 
 import android.os.AsyncTask;
 import android.support.v7.widget.RecyclerView;
+import android.webkit.URLUtil;
 
-public class MenuTask extends AsyncTask<Void, Void, Menu[]> {
+import org.xmlpull.v1.XmlPullParserException;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.List;
+
+public class MenuTask extends AsyncTask<Void, Void, List<Menu>> {
+
+    public static final String API_URL = "http://www.studierendenwerk-koblenz.de/api/speiseplan/speiseplan.xml";
 
     private MenuAdapter menuAdapter;
 
@@ -17,24 +26,36 @@ public class MenuTask extends AsyncTask<Void, Void, Menu[]> {
     }
 
     @Override
-    protected Menu[] doInBackground(Void... params) {
-        Menu[] menus = new Menu[]{
-                new Menu(new MenuItem[]{
-                        new MenuItem("Menü 1", "Hackbraten"),
-                        new MenuItem("Menü 3", "Reis"),
-                        new MenuItem("Extratheke", "Nudeln")
-                }),
-                new Menu(new MenuItem[]{
-                        new MenuItem("Menü 1", "Fisch"),
-                        new MenuItem("Menü 3", "Gebratenes"),
-                        new MenuItem("Extratheke", "Gekochtes")
-                }),
-        };
+    protected List<Menu> doInBackground(Void... params) {
+        List<Menu> menus = null;
+
+        try {
+            InputStream xmlStream = Util.downloadUrl(API_URL);
+            MenuParser menuParser = new MenuParser();
+            menus = menuParser.parse(xmlStream);
+        } catch (IOException | XmlPullParserException e) {
+            e.printStackTrace();
+        }
+
         return menus;
+
+//        Menu[] menus = new Menu[]{
+//                new Menu(new MenuItem[]{
+//                        new MenuItem("Menü 1", "Hackbraten"),
+//                        new MenuItem("Menü 3", "Reis"),
+//                        new MenuItem("Extratheke", "Nudeln")
+//                }),
+//                new Menu(new MenuItem[]{
+//                        new MenuItem("Menü 1", "Fisch"),
+//                        new MenuItem("Menü 3", "Gebratenes"),
+//                        new MenuItem("Extratheke", "Gekochtes")
+//                }),
+//        };
+//        return menus;
     }
 
     @Override
-    protected void onPostExecute(Menu[] menus) {
+    protected void onPostExecute(List<Menu> menus) {
         updateAdapter(menus);
         removeProgressBar();
     }
@@ -42,7 +63,7 @@ public class MenuTask extends AsyncTask<Void, Void, Menu[]> {
     private void addProgressBar() {
     }
 
-    private void updateAdapter(Menu[] menus) {
+    private void updateAdapter(List<Menu> menus) {
         menuAdapter.menus = menus;
         menuAdapter.notifyDataSetChanged();
     }
