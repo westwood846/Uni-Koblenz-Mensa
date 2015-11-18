@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Uni Koblenz Mensa</string>
+    <string name="app_name">UniKo Mensa</string>
     <string name="menu_item_icon_description">Icon for the menu item</string>
     <string name="menu_item_title_placeholder">Menü 1</string>
     <string name="menu_item_description_placeholder">This is a placeholder for the description of a menu item with a long text</string>
