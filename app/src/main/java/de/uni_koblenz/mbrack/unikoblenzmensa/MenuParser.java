@@ -10,6 +10,10 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import de.uni_koblenz.mbrack.unikoblenzmensa.entity.Menu;
+import de.uni_koblenz.mbrack.unikoblenzmensa.entity.MenuItem;
+import de.uni_koblenz.mbrack.unikoblenzmensa.entity.MenuItemType;
+
 
 /*
     See https://developer.android.com/training/basics/network-ops/xml.html

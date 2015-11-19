@@ -1,4 +1,4 @@
-package de.uni_koblenz.mbrack.unikoblenzmensa;
+package de.uni_koblenz.mbrack.unikoblenzmensa.entity;
 
 public class MenuItem {
     public String title;

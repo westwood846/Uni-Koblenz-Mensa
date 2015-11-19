@@ -1,4 +1,4 @@
-package de.uni_koblenz.mbrack.unikoblenzmensa;
+package de.uni_koblenz.mbrack.unikoblenzmensa.entity;
 
 import java.util.Arrays;
 import java.util.List;

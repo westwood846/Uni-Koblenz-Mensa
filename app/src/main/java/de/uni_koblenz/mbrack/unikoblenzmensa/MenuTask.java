@@ -8,6 +8,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
+import de.uni_koblenz.mbrack.unikoblenzmensa.entity.Menu;
+
 public class MenuTask extends AsyncTask<Void, Void, List<Menu>> {
 
     public static final String API_URL = "http://www.studierendenwerk-koblenz.de/api/speiseplan/speiseplan.xml";

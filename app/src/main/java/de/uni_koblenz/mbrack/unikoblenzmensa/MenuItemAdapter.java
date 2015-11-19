@@ -12,6 +12,8 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import de.uni_koblenz.mbrack.unikoblenzmensa.entity.MenuItem;
+
 public class MenuItemAdapter extends ArrayAdapter<MenuItem> {
     public Context context;
     public List<MenuItem> menuItems;

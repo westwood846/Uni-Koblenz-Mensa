@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.*;
-import android.widget.ListView;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -90,11 +89,11 @@ public class MenusActivity extends AppCompatActivity {
     }
 
     private void setupAdapters() {
-        mondayMenuItemAdapter = new MenuItemAdapter(this, -1, new ArrayList<MenuItem>());
-        tuesdayMenuItemAdapter = new MenuItemAdapter(this, -1, new ArrayList<MenuItem>());
-        wednesdayMenuItemAdapter = new MenuItemAdapter(this, -1, new ArrayList<MenuItem>());
-        thursdayMenuItemAdapter = new MenuItemAdapter(this, -1, new ArrayList<MenuItem>());
-        fridayMenuItemAdapter = new MenuItemAdapter(this, -1, new ArrayList<MenuItem>());
+        mondayMenuItemAdapter = new MenuItemAdapter(this, -1, new ArrayList<de.uni_koblenz.mbrack.unikoblenzmensa.entity.MenuItem>());
+        tuesdayMenuItemAdapter = new MenuItemAdapter(this, -1, new ArrayList<de.uni_koblenz.mbrack.unikoblenzmensa.entity.MenuItem>());
+        wednesdayMenuItemAdapter = new MenuItemAdapter(this, -1, new ArrayList<de.uni_koblenz.mbrack.unikoblenzmensa.entity.MenuItem>());
+        thursdayMenuItemAdapter = new MenuItemAdapter(this, -1, new ArrayList<de.uni_koblenz.mbrack.unikoblenzmensa.entity.MenuItem>());
+        fridayMenuItemAdapter = new MenuItemAdapter(this, -1, new ArrayList<de.uni_koblenz.mbrack.unikoblenzmensa.entity.MenuItem>());
 
         allMenuItemAdapters = new ArrayList<>();
         allMenuItemAdapters.add(mondayMenuItemAdapter);
