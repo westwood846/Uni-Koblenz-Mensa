@@ -68,6 +68,9 @@ public class MenusTask extends AsyncTask<Void, Void, List<Menu>> {
     }
 
     private void sanityCheck(List<Menu> menus) {
+        if (menus == null || menus.size() < 5) {
+            throw new MenusNotAvailableException();
+        }
     }
 
     private void updateAdapter(List<Menu> menus) {
