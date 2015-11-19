@@ -9,7 +9,10 @@ import java.io.InputStream;
 import java.util.List;
 
 import de.uni_koblenz.mbrack.unikoblenzmensa.entity.Menu;
+import de.uni_koblenz.mbrack.unikoblenzmensa.fetch.APIMenusFetcher;
 import de.uni_koblenz.mbrack.unikoblenzmensa.fetch.MenuParser;
+import de.uni_koblenz.mbrack.unikoblenzmensa.fetch.MenusNotAvailableException;
+import de.uni_koblenz.mbrack.unikoblenzmensa.fetch.MenusSource;
 import de.uni_koblenz.mbrack.unikoblenzmensa.util.Util;
 
 public class MenusTask extends AsyncTask<Void, Void, List<Menu>> {
@@ -30,12 +33,11 @@ public class MenusTask extends AsyncTask<Void, Void, List<Menu>> {
     @Override
     protected List<Menu> doInBackground(Void... params) {
         List<Menu> menus = null;
+        MenusSource menusSource = new APIMenusFetcher();
 
         try {
-            InputStream xmlStream = Util.downloadUrl(API_URL);
-            MenuParser menuParser = new MenuParser();
-            menus = menuParser.parse(xmlStream);
-        } catch (IOException | XmlPullParserException e) {
+            menus = menusSource.getMenus();
+        } catch (MenusNotAvailableException e) {
             e.printStackTrace();
         }
 
