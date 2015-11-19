@@ -3,25 +3,15 @@ package de.uni_koblenz.mbrack.unikoblenzmensa;
 import android.content.Context;
 import android.os.AsyncTask;
 
-import org.xmlpull.v1.XmlPullParserException;
-
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.List;
 
 import de.uni_koblenz.mbrack.unikoblenzmensa.entity.Menu;
 import de.uni_koblenz.mbrack.unikoblenzmensa.fetch.APIMenusFetcher;
 import de.uni_koblenz.mbrack.unikoblenzmensa.fetch.CacheMenusFetcher;
-import de.uni_koblenz.mbrack.unikoblenzmensa.fetch.MenuParser;
 import de.uni_koblenz.mbrack.unikoblenzmensa.fetch.MenusNotAvailableException;
 import de.uni_koblenz.mbrack.unikoblenzmensa.fetch.MenusSource;
-import de.uni_koblenz.mbrack.unikoblenzmensa.util.ObjectCache;
-import de.uni_koblenz.mbrack.unikoblenzmensa.util.Util;
 
 public class MenusTask extends AsyncTask<Void, Void, List<Menu>> {
-
-    public static final String API_URL = "http://www.studierendenwerk-koblenz.de/api/speiseplan/speiseplan.xml";
-
     private List<MenuItemAdapter> menuItemAdapters;
     private Context context;
 
