@@ -13,19 +13,19 @@ public class MenuItemCurator {
         return description;
     }
 
-    private String removeAllParenthesisWithContent(String string) {
+    public String removeAllParenthesisWithContent(String string) {
         return string.replaceAll("\\(.*?\\)", "");
     }
 
-    private String removeMultipleWhitespaces(String string) {
+    public String removeMultipleWhitespaces(String string) {
         return string.replaceAll("\\s+", " ");
     }
 
-    private String removeSpacesBeforeCommas(String string) {
+    public String removeSpacesBeforeCommas(String string) {
         return string.replaceAll("\\s+,", ",");
     }
 
-    private String ensureSpacesAfterPunctuation(String string) {
+    public String ensureSpacesAfterPunctuation(String string) {
         return string.replaceAll("([,.!?;:])([a-zA-Z])", "$1 $2");
     }
 }
