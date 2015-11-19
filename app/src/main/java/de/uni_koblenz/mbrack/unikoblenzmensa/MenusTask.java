@@ -11,6 +11,7 @@ import java.util.List;
 
 import de.uni_koblenz.mbrack.unikoblenzmensa.entity.Menu;
 import de.uni_koblenz.mbrack.unikoblenzmensa.fetch.APIMenusFetcher;
+import de.uni_koblenz.mbrack.unikoblenzmensa.fetch.CacheMenusFetcher;
 import de.uni_koblenz.mbrack.unikoblenzmensa.fetch.MenuParser;
 import de.uni_koblenz.mbrack.unikoblenzmensa.fetch.MenusNotAvailableException;
 import de.uni_koblenz.mbrack.unikoblenzmensa.fetch.MenusSource;
@@ -41,8 +42,15 @@ public class MenusTask extends AsyncTask<Void, Void, List<Menu>> {
 
         try {
             menus = menusSource.getMenus();
+            System.out.println("Got menus from API");
         } catch (MenusNotAvailableException e) {
-            e.printStackTrace();
+            menusSource = new CacheMenusFetcher(context);
+            try {
+                menus = menusSource.getMenus();
+                System.out.println("Got menus from chache");
+            } catch (MenusNotAvailableException e1) {
+                e1.printStackTrace();
+            }
         }
 
         return menus;
