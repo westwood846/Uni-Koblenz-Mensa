@@ -3,6 +3,8 @@ package de.uni_koblenz.mbrack.unikoblenzmensa;
 import org.junit.Before;
 import org.junit.Test;
 
+import de.uni_koblenz.mbrack.unikoblenzmensa.util.MenuItemCurator;
+
 import static org.junit.Assert.*;
 
 public class MenuItemCuratorTest {

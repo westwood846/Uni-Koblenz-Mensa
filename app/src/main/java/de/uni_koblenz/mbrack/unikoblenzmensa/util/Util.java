@@ -1,4 +1,4 @@
-package de.uni_koblenz.mbrack.unikoblenzmensa;
+package de.uni_koblenz.mbrack.unikoblenzmensa.util;
 
 import java.io.IOException;
 import java.io.InputStream;

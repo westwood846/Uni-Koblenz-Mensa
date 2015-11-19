@@ -7,9 +7,8 @@ import org.junit.Test;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
-import java.util.List;
 
-import static org.junit.Assert.*;
+import de.uni_koblenz.mbrack.unikoblenzmensa.util.MenuParser;
 
 public class MenuParserTest {
     InputStream xmlInputStream;

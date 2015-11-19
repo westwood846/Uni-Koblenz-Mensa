@@ -9,6 +9,8 @@ import java.io.InputStream;
 import java.util.List;
 
 import de.uni_koblenz.mbrack.unikoblenzmensa.entity.Menu;
+import de.uni_koblenz.mbrack.unikoblenzmensa.util.MenuParser;
+import de.uni_koblenz.mbrack.unikoblenzmensa.util.Util;
 
 public class MenuTask extends AsyncTask<Void, Void, List<Menu>> {
 

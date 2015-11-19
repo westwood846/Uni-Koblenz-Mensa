@@ -4,6 +4,8 @@ import org.junit.Test;
 
 import java.io.InputStream;
 
+import de.uni_koblenz.mbrack.unikoblenzmensa.util.Util;
+
 import static org.junit.Assert.*;
 
 public class UtilTest {
