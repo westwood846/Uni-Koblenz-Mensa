@@ -50,7 +50,7 @@ public class MenusActivity extends AppCompatActivity {
     }
 
     private void setupViewPager(ViewPager viewPager) {
-        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
+        MenusPagerAdapter menusPagerAdapter = new MenusPagerAdapter(getSupportFragmentManager());
 
         Bundle mondayBundle = new Bundle();
         Bundle tuesdayBundle = new Bundle();
@@ -77,13 +77,13 @@ public class MenusActivity extends AppCompatActivity {
         fridayFragment.setArguments(fridayBundle);
 
 
-        viewPagerAdapter.addFragment(mondayFragment, "mon");
-        viewPagerAdapter.addFragment(tuesdayFragment, "tue");
-        viewPagerAdapter.addFragment(wednesdayFragment, "wed");
-        viewPagerAdapter.addFragment(thursdayFragment, "thu");
-        viewPagerAdapter.addFragment(fridayFragment, "fri");
+        menusPagerAdapter.addFragment(mondayFragment, "mon");
+        menusPagerAdapter.addFragment(tuesdayFragment, "tue");
+        menusPagerAdapter.addFragment(wednesdayFragment, "wed");
+        menusPagerAdapter.addFragment(thursdayFragment, "thu");
+        menusPagerAdapter.addFragment(fridayFragment, "fri");
 
-        viewPager.setAdapter(viewPagerAdapter);
+        viewPager.setAdapter(menusPagerAdapter);
 
         updateTabSelection();
     }
