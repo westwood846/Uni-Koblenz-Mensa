@@ -14,9 +14,13 @@ public class APIMenusFetcher implements MenusSource {
     public static final String API_URL = "http://www.studierendenwerk-koblenz.de/api/speiseplan/speiseplan.xml";
 
     @Override
-    public List<Menu> getMenus() throws IOException, XmlPullParserException {
-        InputStream xmlStream = Util.downloadUrl(API_URL);
-        MenuParser menuParser = new MenuParser();
-        return menuParser.parse(xmlStream);
+    public List<Menu> getMenus() throws MenusNotAvailableException {
+        try {
+            InputStream xmlStream = Util.downloadUrl(API_URL);
+            MenuParser menuParser = new MenuParser();
+            return menuParser.parse(xmlStream);
+        } catch (IOException | XmlPullParserException e) {
+            throw new MenusNotAvailableException();
+        }
     }
 }

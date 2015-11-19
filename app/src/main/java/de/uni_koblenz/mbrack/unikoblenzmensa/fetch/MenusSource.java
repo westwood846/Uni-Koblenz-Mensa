@@ -8,5 +8,5 @@ import java.util.List;
 import de.uni_koblenz.mbrack.unikoblenzmensa.entity.Menu;
 
 public interface MenusSource {
-    List<Menu> getMenus() throws IOException, XmlPullParserException;
+    List<Menu> getMenus() throws MenusNotAvailableException;
 }
