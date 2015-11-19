@@ -124,7 +124,7 @@ public class MenusActivity extends AppCompatActivity {
 
     private void updateMenus() {
         System.out.println("Getting menus");
-        MenusTask menusTask = new MenusTask(allMenuItemAdapters);
+        MenusTask menusTask = new MenusTask(allMenuItemAdapters, this);
         menusTask.execute();
     }
 

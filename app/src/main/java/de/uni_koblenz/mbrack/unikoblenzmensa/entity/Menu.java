@@ -1,9 +1,10 @@
 package de.uni_koblenz.mbrack.unikoblenzmensa.entity;
 
+import java.io.Serializable;
 import java.util.Arrays;
 import java.util.List;
 
-public class Menu {
+public class Menu implements Serializable {
     public List<MenuItem> menuItems;
 
     public Menu(List<MenuItem> menuItems) {

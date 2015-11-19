@@ -1,6 +1,8 @@
 package de.uni_koblenz.mbrack.unikoblenzmensa.entity;
 
-public class MenuItem {
+import java.io.Serializable;
+
+public class MenuItem implements Serializable {
     public String title;
     public String description;
     public MenuItemType type;
