@@ -22,7 +22,7 @@ Ein **Speiseplan** (Menu) ist eine Menge von **Gerichten** (MenuItem) für einen
 ## Todo
 Folgende Features könnten unter Anderem noch umgesetzt werden. Bevor eines davon implementiert wird sollte kurz abgewogen werden, ob es die Simplizität der App verringern würde.
 
-* Caching des Speiseplans damit die App auch offline funktioniert
+* Schlaueres caching des Speiseplans (primitiver Ansatz wurde implementiert)
 * Userdefinierte Sortierung der Gerichte
 * Automatisches Abfragen und Zwischenspeichern der Daten durch einen eigenen Server um den Server des Studierendenwerks nicht zu belasten
 * Binäres Ratingsystem: Nutzer können auswählen, welches Gericht sie essen *werden*. Darauf aufbauend vielleicht ein paar kleine Statistiken und Erinnerungen dass ein Gericht schon mal gegessen wurde.
