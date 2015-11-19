@@ -84,10 +84,7 @@ public class MenusTask extends AsyncTask<Void, Void, List<Menu>> {
     }
 
     private void cacheMenus(List<Menu> menus) {
-        try {
-            ObjectCache.writeObject(context, "menus", menus);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        CacheMenusFetcher cacheMenusFetcher = new CacheMenusFetcher(context);
+        cacheMenusFetcher.storeMenus(menus);
     }
 }

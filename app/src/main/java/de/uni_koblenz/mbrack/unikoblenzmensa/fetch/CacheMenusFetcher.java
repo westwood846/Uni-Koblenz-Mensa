@@ -9,6 +9,8 @@ import de.uni_koblenz.mbrack.unikoblenzmensa.entity.Menu;
 import de.uni_koblenz.mbrack.unikoblenzmensa.util.ObjectCache;
 
 public class CacheMenusFetcher implements MenusSource {
+    public static final String STORE_KEY = "menus";
+
     private Context context;
 
     public CacheMenusFetcher(Context context) {
@@ -18,9 +20,17 @@ public class CacheMenusFetcher implements MenusSource {
     @Override
     public List<Menu> getMenus() throws MenusNotAvailableException {
         try {
-            return (List<Menu>) ObjectCache.readObject(context, "menus");
+            return (List<Menu>) ObjectCache.readObject(context, STORE_KEY);
         } catch (IOException | ClassNotFoundException e) {
             throw new MenusNotAvailableException();
+        }
+    }
+
+    public void storeMenus(List<Menu> menus) {
+        try {
+            ObjectCache.writeObject(context, STORE_KEY, menus);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }
