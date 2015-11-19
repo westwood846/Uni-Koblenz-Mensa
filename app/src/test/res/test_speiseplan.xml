@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--copyright wizAI solutions GmbH
+Das Skript zeigt den Mensaplan der aktuellen Kalenderwoche an.
+@params:
+	Datum: Das Datum des Mensatages
+	menu1: Mensamenü für Menü 1 (mit Fleisch)
+	menuv: Vegetarisches Mensamenü
+	menua: Abendmensa
+	menub: Bistromenü (noch nicht verwendet)
+	menue: Extratheke
+	menud: Vitalteller
+	menuvegan: Vegan
+Wenn nichts eingetragen wird, ist 'Siehe Tagesaushang' der Standardeintrag-->
+<Mensamenue><Datum>2015-11-16<menu1>Rindergeschnetzeltes (10, C, E) mit Spätzle (C, N) und Salat (3, B)</menu1><menua>Rinderroulade (1,2,3, D, E F, G) mit Kartoffelklößen (C, N) und Salat (3,B) oder Lauch-Maisrösti ( (C,E,N)</menua><menub>Bratwurst mit Wirsing (A) und Kartoffeln 5,60 ,&#13;
+Spare Rips (D,2)  mit Krautsalat (B,3),Baguette (5,2,N,C) 5,20 </menub><menud>Vital-Teller: Buntbarschfilet (A) mit Tomaten- Champignon-Kruste, Pinienkerne, Estragonsoße (A, C) und Wildreis</menud><menue>Pasta (C, N) mit Geflügelcurry (A, C, K) oder mit Ratatouille (C, E) dazu Salat (3, B) und Dessert : Rollino, Knoppers, Eis Obst</menue><menuv>Grünkern-Knuspermedaillon (C, E, G, N) mit Reis, Gemüsesoße (A, C, D, E) und Salat (3, B)</menuv><menuvegan>Vegan an der Extratheke: Zartweizen (C) mit Ratatouille  (C, E) und Salat (3, B)</menuvegan><zusatz1>3,10,B,C,E,N</zusatz1><zusatza>1,2,3,B,C,D,E,G,N</zusatza><zusatzb>2,3,5,A,B,C,D,N</zusatzb><zusatzd>A,C</zusatzd><zusatze>3,A,B,C,E,K,N</zusatze><zusatzv>3,A,B,C,D,E,G,N</zusatzv><zusatzvegan>3,B,C,E</zusatzvegan></Datum><Datum>2015-11-17<menu1>Putensteak mit Tomatensoße (C), Maisreis und Salat (B,3)</menu1><menua>Cevapcici oder Gemüsekroketten mit Pommes Frites und Salat </menua><menub>Bratwurst mit Wirsing (A) und Kartoffeln 5,60 ,&#13;
+Spare Rips (D,2)  mit Krautsalat (B,3),Baguette (5,2,N,C) 5,20  </menub><menud>Vital-Teller: Gemüsepfanne mit Rinderhackfleisch (C), Zartweizen(C), Tomaten-Chili-Dip dazu bunter Weißkrautsalat</menud><menue>Versch.Pasta (C,N) Champignonrahmsoße(A,C), Rindergulasch,(C) Hirschgulasch (A,C)</menue><menuv>Gemüsestifte (Karotten/Pastinaken) (A,C,E) mit Kartoffelpüree(5,A) und Salat(B,3)</menuv><menuvegan>siehe Tagesangebot an der Extratheke</menuvegan><zusatz1>3,B,C</zusatz1><zusatza></zusatza><zusatzb></zusatzb><zusatzd>C</zusatzd><zusatze>A,C,N</zusatze><zusatzv>3,5,A,B,C,E</zusatzv><zusatzvegan></zusatzvegan></Datum></Mensamenue>
+
