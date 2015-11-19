@@ -124,8 +124,8 @@ public class MenusActivity extends AppCompatActivity {
 
     private void updateMenus() {
         System.out.println("Getting menus");
-        MenuTask menuTask = new MenuTask(allMenuItemAdapters);
-        menuTask.execute();
+        MenusTask menusTask = new MenusTask(allMenuItemAdapters);
+        menusTask.execute();
     }
 
     private void updateTabSelection() {

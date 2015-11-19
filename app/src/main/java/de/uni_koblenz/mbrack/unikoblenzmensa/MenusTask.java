@@ -12,13 +12,13 @@ import de.uni_koblenz.mbrack.unikoblenzmensa.entity.Menu;
 import de.uni_koblenz.mbrack.unikoblenzmensa.util.MenuParser;
 import de.uni_koblenz.mbrack.unikoblenzmensa.util.Util;
 
-public class MenuTask extends AsyncTask<Void, Void, List<Menu>> {
+public class MenusTask extends AsyncTask<Void, Void, List<Menu>> {
 
     public static final String API_URL = "http://www.studierendenwerk-koblenz.de/api/speiseplan/speiseplan.xml";
 
     private List<MenuItemAdapter> menuItemAdapters;
 
-    public MenuTask(List<MenuItemAdapter> menuItemAdapters) {
+    public MenusTask(List<MenuItemAdapter> menuItemAdapters) {
         this.menuItemAdapters = menuItemAdapters;
     }
 
