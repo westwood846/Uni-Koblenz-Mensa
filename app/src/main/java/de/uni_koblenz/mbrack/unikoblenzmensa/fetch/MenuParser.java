@@ -1,4 +1,4 @@
-package de.uni_koblenz.mbrack.unikoblenzmensa.util;
+package de.uni_koblenz.mbrack.unikoblenzmensa.fetch;
 
 import android.util.Xml;
 
@@ -13,6 +13,7 @@ import java.util.List;
 import de.uni_koblenz.mbrack.unikoblenzmensa.entity.Menu;
 import de.uni_koblenz.mbrack.unikoblenzmensa.entity.MenuItem;
 import de.uni_koblenz.mbrack.unikoblenzmensa.entity.MenuItemType;
+import de.uni_koblenz.mbrack.unikoblenzmensa.util.MenuItemCurator;
 
 
 /*

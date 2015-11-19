@@ -1,4 +1,4 @@
-package de.uni_koblenz.mbrack.unikoblenzmensa.util;
+package de.uni_koblenz.mbrack.unikoblenzmensa.fetch;
 
 import org.xmlpull.v1.XmlPullParserException;
 

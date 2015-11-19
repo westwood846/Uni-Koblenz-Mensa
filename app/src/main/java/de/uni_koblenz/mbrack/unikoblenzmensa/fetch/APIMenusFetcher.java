@@ -1,4 +1,4 @@
-package de.uni_koblenz.mbrack.unikoblenzmensa.util;
+package de.uni_koblenz.mbrack.unikoblenzmensa.fetch;
 
 import org.xmlpull.v1.XmlPullParserException;
 
@@ -7,6 +7,7 @@ import java.io.InputStream;
 import java.util.List;
 
 import de.uni_koblenz.mbrack.unikoblenzmensa.entity.Menu;
+import de.uni_koblenz.mbrack.unikoblenzmensa.util.Util;
 
 public class APIMenusFetcher implements MenusSource {
 

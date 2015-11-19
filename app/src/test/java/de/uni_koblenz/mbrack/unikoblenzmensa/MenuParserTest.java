@@ -8,7 +8,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
 
-import de.uni_koblenz.mbrack.unikoblenzmensa.util.MenuParser;
+import de.uni_koblenz.mbrack.unikoblenzmensa.fetch.MenuParser;
 
 public class MenuParserTest {
     InputStream xmlInputStream;
