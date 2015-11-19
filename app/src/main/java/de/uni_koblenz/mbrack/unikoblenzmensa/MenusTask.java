@@ -47,7 +47,7 @@ public class MenusTask extends AsyncTask<Void, Void, List<Menu>> {
             menusSource = new CacheMenusFetcher(context);
             try {
                 menus = menusSource.getMenus();
-                System.out.println("Got menus from chache");
+                System.out.println("Got menus from cache");
             } catch (MenusNotAvailableException e1) {
                 e1.printStackTrace();
             }

@@ -11,8 +11,8 @@ import java.io.ObjectOutputStream;
 
 public class ObjectCache {
     public static void writeObject(Context context, String key, Object object) throws IOException {
-        File chacheDir = context.getCacheDir();
-        FileOutputStream fos = new FileOutputStream(new File(chacheDir, key));
+        File cacheDir = context.getCacheDir();
+        FileOutputStream fos = new FileOutputStream(new File(cacheDir, key));
         ObjectOutputStream oos = new ObjectOutputStream(fos);
         oos.writeObject(object);
         oos.close();
@@ -20,8 +20,8 @@ public class ObjectCache {
     }
 
     public static Object readObject(Context context, String key) throws IOException, ClassNotFoundException {
-        File chacheDir = context.getCacheDir();
-        FileInputStream fis = new FileInputStream(new File(chacheDir, key));
+        File cacheDir = context.getCacheDir();
+        FileInputStream fis = new FileInputStream(new File(cacheDir, key));
         ObjectInputStream ois = new ObjectInputStream(fis);
         return ois.readObject();
     }
