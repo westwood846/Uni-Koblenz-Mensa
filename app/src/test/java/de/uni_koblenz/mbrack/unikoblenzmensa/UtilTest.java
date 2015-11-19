@@ -3,7 +3,6 @@ package de.uni_koblenz.mbrack.unikoblenzmensa;
 import org.junit.Test;
 
 import java.io.InputStream;
-import java.net.MalformedURLException;
 
 import static org.junit.Assert.*;
 
