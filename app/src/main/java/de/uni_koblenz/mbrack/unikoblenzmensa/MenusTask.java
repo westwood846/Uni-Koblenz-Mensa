@@ -3,6 +3,7 @@ package de.uni_koblenz.mbrack.unikoblenzmensa;
 import android.content.Context;
 import android.os.AsyncTask;
 
+import java.io.File;
 import java.util.List;
 
 import de.uni_koblenz.mbrack.unikoblenzmensa.entity.Menu;
@@ -13,11 +14,11 @@ import de.uni_koblenz.mbrack.unikoblenzmensa.fetch.MenusSource;
 
 public class MenusTask extends AsyncTask<Void, Void, List<Menu>> {
     private List<MenuItemAdapter> menuItemAdapters;
-    private Context context;
+    private CacheMenusFetcher cacheMenusFetcher;
 
-    public MenusTask(List<MenuItemAdapter> menuItemAdapters, Context context) {
+    public MenusTask(List<MenuItemAdapter> menuItemAdapters, File cacheDir) {
         this.menuItemAdapters = menuItemAdapters;
-        this.context = context;
+        this.cacheMenusFetcher = new CacheMenusFetcher(cacheDir);
     }
 
     @Override
@@ -28,15 +29,14 @@ public class MenusTask extends AsyncTask<Void, Void, List<Menu>> {
     @Override
     protected List<Menu> doInBackground(Void... params) {
         List<Menu> menus = null;
-        MenusSource menusSource = new APIMenusFetcher();
+        APIMenusFetcher apiMenusFetcher = new APIMenusFetcher();
 
         try {
-            menus = menusSource.getMenus();
+            menus = apiMenusFetcher.getMenus();
             System.out.println("Got menus from API");
         } catch (MenusNotAvailableException e) {
-            menusSource = new CacheMenusFetcher(context);
             try {
-                menus = menusSource.getMenus();
+                menus = cacheMenusFetcher.getMenus();
                 System.out.println("Got menus from cache");
             } catch (MenusNotAvailableException e1) {
                 e1.printStackTrace();
@@ -77,7 +77,6 @@ public class MenusTask extends AsyncTask<Void, Void, List<Menu>> {
     }
 
     private void cacheMenus(List<Menu> menus) {
-        CacheMenusFetcher cacheMenusFetcher = new CacheMenusFetcher(context);
         cacheMenusFetcher.storeMenus(menus);
     }
 }
