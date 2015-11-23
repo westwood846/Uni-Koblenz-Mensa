@@ -13,13 +13,12 @@ public class MenuFragment extends Fragment {
     private MenuItemAdapter menuItemAdapter;
     private int day;
 
-    public MenuFragment() {
-    }
-
-
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        day = getArguments().getInt("day");
+        MenusActivity parentActivity = ((MenusActivity) context);
+        menuItemAdapter = parentActivity.allMenuItemAdapters.get(day);
     }
 
     @Override
@@ -28,13 +27,5 @@ public class MenuFragment extends Fragment {
         listView = (ListView) view.findViewById(R.id.menu_item_list);
         listView.setAdapter(menuItemAdapter);
         return view;
-    }
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        day = getArguments().getInt("day");
-        MenusActivity parentActivity = ((MenusActivity) context);
-        menuItemAdapter = parentActivity.allMenuItemAdapters.get(day);
     }
 }
