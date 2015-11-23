@@ -16,6 +16,15 @@ public class MenuItemCuratorTest {
     }
 
     @Test
+    public void testCurateDescription() throws Exception {
+        assertTrue(menuItemCurator.curateDescription("Nudeln").contains("Nudeln"));
+        assertTrue(menuItemCurator.curateDescription("Nudeln ").contains("Nudeln"));
+        assertTrue(menuItemCurator.curateDescription(" Nudeln ").contains("Nudeln"));
+        assertTrue(menuItemCurator.curateDescription(" Nudeln").contains("Nudeln"));
+        assertTrue(menuItemCurator.curateDescription("Nudeln (Schokolade) Spinat").contains("Nudeln"));
+    }
+
+    @Test
     public void testRemoveAllParenthesisWithContent() throws Exception {
         assertEquals(menuItemCurator.removeAllParenthesisWithContent("()"), "");
         assertEquals(menuItemCurator.removeAllParenthesisWithContent("(bla)"), "");
