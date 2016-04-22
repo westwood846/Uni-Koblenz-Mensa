@@ -32,6 +32,10 @@
         font-size: 28pt;
       }
 
+      .donate-button-container {
+        text-align: center;
+      }
+
       p {
         margin-bottom: 24px;
       }
@@ -41,24 +45,33 @@
         color: white;
         margin-top: 18px;
       }
+
+      .frontimage {
+        width: 100%;
+        margin-bottom: 64px;
+      }
+
+      .btn-myprimary, .btn-myprimary:hover, .btn-myprimary:active, .btn-myprimary:visited {
+        background-color: #FFC107;
+        color: white;
+      }
     </style>
   </head>
   <body>
     <a class="github-fork-ribbon" href="https://github.com/turbopope/Uni-Koblenz-Mensa" title="Fork me on GitHub">Fork me on GitHub</a>
 
+    <img src="kickstarter.jpg" alt="" class="frontimage"/>
+
     <div class="container">
 
-      <div class="jumbotron">
-        <h1>Uni Koblenz Mensa App</h1>
-        <p>A Mensa App that does not suck (as much).</p>
-      </div>
-
-      <p>
-        <a href="#">
-          <i class="fa fa-usd donate-button" aria-hidden="true"></i>
-          <i class="fa fa-usd donate-button" aria-hidden="true"></i>
-          <i class="fa fa-usd donate-button" aria-hidden="true"></i>
+      <p class="donate-button-container">
+        <a href="#" class="btn btn-myprimary donate-button">
+          <i class="fa fa-usd" aria-hidden="true"></i>
+          <i class="fa fa-usd" aria-hidden="true"></i>
+          <i class="fa fa-usd" aria-hidden="true"></i>
         </a>
+        <br>
+        <br>
         Pls send me the moneyz! Ich brauche 20€ um die App in den Play Store zu stellen.
       </p>
 
